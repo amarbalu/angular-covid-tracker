@@ -8,10 +8,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { StatusComponent } from './status/status.component';
 import { CountryStatusComponent } from './country-status/country-status.component';
 import { CovidServiceService } from './covid-service.service';
+import { ZeroFilterPipe } from './zero-filter.pipe';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, StatusComponent, CountryStatusComponent ],
+  declarations: [ AppComponent, HelloComponent, StatusComponent, CountryStatusComponent, ZeroFilterPipe ],
   bootstrap:    [ AppComponent ],
   providers: [CovidServiceService]
 })
