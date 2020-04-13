@@ -14,8 +14,8 @@
     <tbody> 
       <tr *ngFor="let body of countryStatusArr  ">
         <td >{{body.Country }}</td>
-        <td>{{body.TotalConfirmed | number |zeroRemove  }}</td>
-        <td [ngStyle]="{'background-color':body.NewConfirmed>0?'yellow':''}" >{{body.NewConfirmed |number | zeroFilter}}</td>
+        <td>{{body.TotalConfirmed  | number   }}</td>
+        <td [ngStyle]="{'background-color':body.NewConfirmed>0?'yellow':''}" >{{body.NewConfirmed |number |zeroRemove }}</td>
          <td>{{body.TotalDeaths | number |zeroRemove}}</td>
         <td [ngStyle]="{'background-color':body.NewDeaths>0?'red':''}">{{body.NewDeaths| zeroFilter}}</td>
          <td>{{body.TotalRecovered | number |zeroRemove }}</td>
