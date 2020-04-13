@@ -14,12 +14,12 @@
     <tbody> 
       <tr *ngFor="let body of countryStatusArr  ">
         <td >{{body.Country }}</td>
-        <td>{{body.TotalConfirmed | number  }}</td>
-        <td [ngStyle]="{'background-color':body.NewConfirmed>0?'yellow':''}" >{{body.NewConfirmed | zeroFilter}}</td>
-         <td>{{body.TotalDeaths | number }}</td>
-        <td style="background-color:red">{{body.NewDeaths| zeroFilter}}</td>
-         <td>{{body.TotalRecovered | number }}</td>
-          <td>{{body.NewRecovered | number }}</td>
+        <td>{{body.TotalConfirmed | number |zeroRemove  }}</td>
+        <td [ngStyle]="{'background-color':body.NewConfirmed>0?'yellow':''}" >{{body.NewConfirmed |number | zeroFilter}}</td>
+         <td>{{body.TotalDeaths | number |zeroRemove}}</td>
+        <td [ngStyle]="{'background-color':body.NewDeaths>0?'red':''}">{{body.NewDeaths| zeroFilter}}</td>
+         <td>{{body.TotalRecovered | number |zeroRemove }}</td>
+          <td>{{body.NewRecovered | number |zeroRemove}}</td>
       </tr>
     
     </tbody>
