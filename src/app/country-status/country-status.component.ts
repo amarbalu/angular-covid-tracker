@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidServiceService } from '../covid-service.service';
 
+
 @Component({
   selector: 'app-country-status',
   templateUrl: './country-status.component.html',
@@ -11,9 +12,11 @@ countryStatusArr:object[];
   constructor(private service:CovidServiceService) { }
 
   ngOnInit() {
+ 
     this.service.obs$.subscribe(value=>{
     
       this.countryStatusArr=value.Countries;
+       
       })
     
   }
