@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidServiceService } from '../covid-service.service';
+import { map,filter,tap } from 'rxjs/operators';
+import { pipe } from 'rxjs';
 
 
 @Component({
@@ -14,8 +16,8 @@ countryStatusArr:object[];
   ngOnInit() {
  
     this.service.obs$.subscribe(value=>{
-    
-      this.countryStatusArr=value.Countries;
+      const filtered=value.Countries.filter(value=>value.TotalConfirmed>0);
+      this.countryStatusArr=filtered;
        
       })
     
