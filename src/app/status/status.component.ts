@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidServiceService } from '../covid-service.service';
+import { status } from './status.model';
 
 @Component({
   selector: 'app-status',
@@ -13,6 +14,7 @@ globalStatus:object
   ngOnInit() {
     this.service.getLatestStatus();
     this.service.obs$.subscribe(value=>{
+      console.log('val' ,value)
       this.globalStatus=value;
     }
     )
