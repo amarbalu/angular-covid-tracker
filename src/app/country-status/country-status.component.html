@@ -1,28 +1,27 @@
 <div class="table-responsive">
 <table class="table">
     <thead class="thead-light">
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+      <tr >
+        <th>Country</th>
+        <th>Total Cases</th>
+        <th>New Cases</th>
+          <th>Total Deaths</th>
+            <th>New Deaths</th>
+              <th>Total Recovered</th>
+                <th>New Recovered</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
+    <tbody> 
+      <tr *ngFor="let body of countryStatusArr  ">
+        <td>{{body.Country }}</td>
+        <td>{{body.TotalConfirmed }}</td>
+        <td style="background-color:yellow">+{{body.NewConfirmed}}</td>
+         <td>+{{body.TotalDeaths}}</td>
+        <td style="background-color:red">{{body.NewDeaths}}</td>
+         <td>{{body.TotalRecovered}}</td>
+          <td>{{body.NewRecovered}}</td>
       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+    
     </tbody>
   </table>
   </div>

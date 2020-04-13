@@ -15,9 +15,7 @@ obs$:Observable<object>;
   }
 getLatestStatus(){
   this.http.get<{Date:string,Global:object,Countries:object[]}>('https://api.covid19api.com/summary').subscribe(value=>{
-    const {Global}=value;
-    console.log(Global)
-    this.subs$.next(Global)
+    this.subs$.next(value)
   });
 }
 }

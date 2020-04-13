@@ -1,37 +1,37 @@
 <div class="card-columns">
   <div class="card bg-primary">
     <div class="card-body text-center">
-      <p>{{globalStatus.TotalConfirmed|currency:en-us:''}}</p>
+      <p>{{globalStatus.TotalConfirmed?globalStatus.TotalConfirmed:''|currency:en-us:''}}</p>
       <p class="card-text">Total Confirmed</p>
     </div>
   </div>
   <div class="card bg-warning">
     <div class="card-body text-center">
-      <p>{{globalStatus.TotalDeaths|currency:en-us:''}}</p>
+      <p>{{globalStatus.TotalDeaths?globalStatus.TotalDeaths:''|currency:en-us:''}}</p>
       <p class="card-text">Total Deaths</p>
     </div>
   </div>
   <div class="card bg-success">
     <div class="card-body text-center">
-        <p>{{globalStatus.TotalRecovered|currency:en-us:''}}</p>
+        <p>{{globalStatus.TotalRecovered?globalStatus.TotalRecovered:''|currency:en-us:''}}</p>
       <p class="card-text">Total Recovered</p>
     </div>
   </div>
   <div class="card bg-danger">
     <div class="card-body text-center">
-        <p>{{globalStatus.NewConfirmed|currency:en-us:''}}</p>
+        <p>{{globalStatus.NewConfirmed?globalStatus.NewConfirmed:''|currency:en-us:''}}</p>
       <p class="card-text">New Confirmed</p>
     </div>
   </div>
   <div class="card bg-light">
     <div class="card-body text-center">
-        <p>{{globalStatus.NewDeaths|currency:en-us:''}}</p>
+        <p>{{globalStatus.NewDeaths?globalStatus.NewDeaths:''|currency:en-us:''}}</p>
       <p class="card-text">New Deaths</p>
     </div>
   </div>
   <div class="card bg-info">
     <div class="card-body text-center">
-        <p>{{globalStatus.NewRecovered|currency:en-us:''}}</p>
+        <p>{{globalStatus.NewRecovered?globalStatus.NewRecovered:''|currency:en-us:''}}</p>
       <p class="card-text">New Recovered</p>
     </div>
   </div>

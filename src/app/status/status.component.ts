@@ -13,9 +13,11 @@ globalStatus:object
 
   ngOnInit() {
     this.service.getLatestStatus();
+
     this.service.obs$.subscribe(value=>{
-      console.log('val' ,value)
-      this.globalStatus=value;
+      if(value && value.Global){
+      this.globalStatus=value.Global;
+      }
     }
     )
   }
