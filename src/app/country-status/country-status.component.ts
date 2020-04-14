@@ -11,16 +11,47 @@ import { pipe } from 'rxjs';
 })
 export class CountryStatusComponent implements OnInit {
 countryStatusArr:object[];
-  constructor(private service:CovidServiceService) { }
+displayArr:object[];
+activepage:number;
+pagearr:number[]
+  constructor(private service:CovidServiceService) {
+    
+   }
 
   ngOnInit() {
  
     this.service.obs$.subscribe(value=>{
       const filtered=value.Countries.filter(value=>value.TotalConfirmed>0);
-      this.countryStatusArr=filtered;
+      console.log((filtered.length/25))
+      this.pagearr=[...new Array(Math.floor(filtered.length/25)).fill(0)];
+      this.displayArr=filtered;
+      this.countryStatusArr=filtered.slice(0,25);
+      this.activepage=1;
        
       })
     
   }
+  pagechange(num:number){
+    const from=(num*25)-25;
+      const to=num*25;
+    this.activepage=num;
+    this.countryStatusArr=this.displayArr.slice(from,to);
+  }
+nextPage(){
+  if(this.activepage !== this.pagearr.length){
+  const num=this.activepage+1;
+  const from=(num*25)-25;
+  const to=num*25;
+  this.activepage=num;
+  }
 
+}
+previousPage(){
+   if(this.activepage !== 1){
+  const num=this.activepage-1;
+  const from=(num*25)-25;
+  const to=num*25;
+  this.activepage=num;
+   }
+}
 }

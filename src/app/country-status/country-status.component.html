@@ -1,3 +1,14 @@
+ <ul class="pagination" >
+ <li  [ngClass]="'page-item'" >
+   <a class="page-link"  (click)="previousPage()">Previous</a></li>
+  <ng-container *ngFor="let page of pagearr;index as id">
+  <li  [ngClass]="activepage===id+1?'page-item active':'page-item'"><a class="page-link" (click)="pagechange(id+1)" >{{id+1}}</a></li>
+
+  </ng-container>
+   <li  [ngClass]="'page-item'">
+   <a class="page-link" (click)="nextPage()" >Next</a></li>
+
+</ul>
 <div class="table-responsive">
 <table id="myTable" class=" table table-striped table-bordered table-sm" cellspacing="0">
     <thead class="thead-light">
@@ -15,13 +26,12 @@
       <tr *ngFor="let body of countryStatusArr  ">
         <td >{{body.Country }}</td>
         <td>{{body.TotalConfirmed  | number   }}</td>
-        <td [ngStyle]="{'background-color':body.NewConfirmed>0?'yellow':''}" >{{body.NewConfirmed |zeroFilter }}</td>
+        <td [ngStyle]="{'background-color':body.NewConfirmed>0?'yellow':''}" >{{body.NewConfirmed| number |zeroFilter }}</td>
          <td>{{body.TotalDeaths |zeroRemove | number }}</td>
-        <td [ngStyle]="{'background-color':body.NewDeaths>0?'red':''}">{{body.NewDeaths| zeroFilter}}</td>
+        <td [ngStyle]="{'background-color':body.NewDeaths>0?'red':''}">{{body.NewDeaths |number| zeroFilter}}</td>
          <td>{{body.TotalRecovered |zeroRemove | number  }}</td>
           <td>{{body.NewRecovered  |zeroRemove | number}}</td>
       </tr>
     
     </tbody>
   </table>
- 

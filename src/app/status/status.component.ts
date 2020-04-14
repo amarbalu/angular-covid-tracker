@@ -8,7 +8,7 @@ import { status } from './status.model';
   styleUrls: ['./status.component.css']
 })
 export class StatusComponent implements OnInit {
-globalStatus:object
+globalStatus:status
   constructor(private service:CovidServiceService) { }
 
   ngOnInit() {
