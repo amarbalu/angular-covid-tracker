@@ -43,6 +43,7 @@ nextPage(){
   const from=(num*25)-25;
   const to=num*25;
   this.activepage=num;
+  this.countryStatusArr=this.displayArr.slice(from,to);
   }
 
 }
@@ -52,6 +53,7 @@ previousPage(){
   const from=(num*25)-25;
   const to=num*25;
   this.activepage=num;
+  this.countryStatusArr=this.displayArr.slice(from,to);
    }
 }
 }
