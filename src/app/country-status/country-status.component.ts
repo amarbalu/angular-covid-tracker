@@ -13,7 +13,8 @@ export class CountryStatusComponent implements OnInit {
 countryStatusArr:object[];
 displayArr:object[];
 activepage:number;
-pagearr:number[]
+pagearr:number[];
+global:status
   constructor(private service:CovidServiceService) {
     
    }
