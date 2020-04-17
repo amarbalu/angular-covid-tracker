@@ -1,4 +1,8 @@
- <ul class="pagination" >
+<div style="margin:20px">
+  <button type="button" [ngClass]="activeDay!=='Today'?'btn':'btn btn-primary'" (click)="dayChange('Today')">Today</button>
+<button type="button" [ngClass]="activeDay==='Today'?'btn':'btn btn-primary'" (click)="dayChange('Yesterday')">Yesterday</button>
+  </div>
+<div style="margin:20px"> <ul class="pagination" >
  <li  [ngClass]="'page-item'" >
    <a class="page-link"  (click)="previousPage()">Prev</a></li>
   <ng-container *ngFor="let page of pagearr;index as id">
@@ -9,6 +13,7 @@
    <a class="page-link" (click)="nextPage()" >Next</a></li>
 
 </ul>
+</div>
 <div class="table-responsive">
 <table id="myTable" class=" table table-striped table-bordered table-sm" cellspacing="0">
     <thead class="thead-light">

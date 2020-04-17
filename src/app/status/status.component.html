@@ -1,20 +1,29 @@
 <div class="card-columns">
+  <div >
 <div class="card-body text-center">
       <p class="card-text content">Corona virus Cases Recorded</p>
       <p>{{globalStatus.TotalConfirmed|number}}</p>
     </div>
+  </div>
+  <div >
     <div class="card-body text-center">
       <p class="card-text content">Deaths</p>
       <p>{{globalStatus.TotalDeaths|number}}</p>
     </div>
-  
+  </div>
+  <div >
     <div class="card-body text-center">
       <p class="card-text content">Recovered</p>
         <p>{{globalStatus.TotalRecovered|number}}</p>
     </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-      <p class="card-text content">Active Cases</p>
+    </div>
+    </div>
+    <div class="card-columns-two" >
+      <div>
+  <div>
+    <div class="card-body text-center bg-light">
+      <h4 class="card-title content">Active Cases</h4>
+      
         <p>{{globalStatus.ActiveCases.currently_infected_patients|number}}
           
         </p>
@@ -34,10 +43,11 @@
 </div>
     </div>
   </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
+  <div >
+    <div class="card-body text-center bg-light">
        
-      <p class="card-text content">Closed Cases</p>
+      <p class="card-text content ">Closed Cases</p>
+      <div >
       <p>{{globalStatus.ClosedCases.cases_which_had_an_outcome|number}}
           
         </p>
@@ -56,4 +66,6 @@
  
     </div>
   </div>
-</div>
+  </div>
+  </div>
+  </div>
