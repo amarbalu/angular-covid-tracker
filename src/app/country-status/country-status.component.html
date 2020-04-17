@@ -19,7 +19,7 @@
           <th class="th-sm">Total Deaths</th>
             <th class="th-sm">New Deaths</th>
               <th class="th-sm">Total Recovered</th>
-                <th class="th-sm">New Recovered</th>
+                
       </tr>
     </thead>
     <tbody> 
@@ -27,12 +27,12 @@
       <tr *ngFor="let body of countryStatusArr  ">
         <td >{{body.Country }}</td>
         <td>{{body.ActiveCases  }}</td>
-        <td [ngStyle]="{'background-color':'yellow'}" >
+        <td [ngStyle]="{'background-color':body.NewCases?'yellow':''}" >
           {{body.NewCases }}</td>
          <td>{{body.TotalDeaths }}</td>
-        <td [ngStyle]="{'background-color':'red'}">{{body.NewDeaths}}</td>
+        <td [ngStyle]="{'background-color':body.NewDeaths?'red':''}">{{body.NewDeaths}}</td>
          <td>{{body.TotalRecovered  }}</td>
-          <td>{{body.NewRecovered }}</td>
+          
       </tr>
     
     </tbody>
