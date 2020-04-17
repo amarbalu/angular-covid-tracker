@@ -25,18 +25,20 @@
       <h4 class="card-title content">Active Cases</h4>
       
         <p>{{globalStatus.ActiveCases.currently_infected_patients|number}}
-          
+        
         </p>
          <p class="card-text content-sub">Currently infected patients</p>
    <div class="row">
   <div class="col">
     <p style="color:violet">{{globalStatus.ActiveCases.inMidCondition|number}}
-          
+        <span style="color:black"> {{globalStatus.ActiveCases.inMidCondition|percent:globalStatus.ActiveCases.currently_infected_patients}}
+          </span> 
         </p>
          <p class="card-text content-sub">in Mild Condition</p>
   </div>
   <div class="col"> <p style="color:red">{{globalStatus.ActiveCases.criticalStates|number}}
-          
+          <span style="color:black">{{globalStatus.ActiveCases.criticalStates|percent:globalStatus.ActiveCases.currently_infected_patients}}
+          </span> 
         </p>
          <p class="card-text content-sub">in Critical Status</p></div>
  
@@ -55,12 +57,14 @@
    <div class="row">
   <div class="col">
     <p style="color:green">{{globalStatus.ClosedCases.recovered|number}}
-          
+            <span style="color:black"> {{globalStatus.ClosedCases.recovered|percent:globalStatus.ClosedCases.cases_which_had_an_outcome}}
+          </span> 
         </p>
          <p class="card-text content-sub">Recovered</p>
   </div>
   <div class="col"> <p >{{globalStatus.ClosedCases.deaths|number}}
-          
+            <span style="color:black"> {{globalStatus.ClosedCases.deaths|percent:globalStatus.ClosedCases.cases_which_had_an_outcome}}
+          </span> 
         </p>
          <p class="card-text content-sub">Deaths</p></div>
  

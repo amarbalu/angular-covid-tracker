@@ -10,10 +10,11 @@ import { CountryStatusComponent } from './country-status/country-status.componen
 import { CovidServiceService } from './covid-service.service';
 import { ZeroFilterPipe } from './zero-filter.pipe';
 import { ZeroRemovePipe } from './zero-remove.pipe';
+import { PercentPipe } from './percent.pipe';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, StatusComponent, CountryStatusComponent, ZeroFilterPipe, ZeroRemovePipe ],
+  declarations: [ AppComponent, HelloComponent, StatusComponent, CountryStatusComponent, ZeroFilterPipe, ZeroRemovePipe, PercentPipe ],
   bootstrap:    [ AppComponent ],
   providers: [CovidServiceService]
 })
