@@ -1,38 +1,64 @@
 <div class="card-columns">
   <div class="card bg-light">
     <div class="card-body text-center">
+      <p class="card-text content">Cases</p>
       <p>{{globalStatus.TotalConfirmed|number}}</p>
-      <p class="card-text content">Total Confirmed</p>
     </div>
   </div>
   <div class="card bg-light">
     <div class="card-body text-center">
+      <p class="card-text content">Deaths</p>
       <p>{{globalStatus.TotalDeaths|number}}</p>
-      <p class="card-text content">Total Deaths</p>
     </div>
   </div>
   <div class="card bg-light">
     <div class="card-body text-center">
+      <p class="card-text content">Recovered</p>
         <p>{{globalStatus.TotalRecovered|number}}</p>
-      <p class="card-text content">Total Recovered</p>
     </div>
   </div>
   <div class="card bg-light">
     <div class="card-body text-center">
-        <p>{{globalStatus.NewConfirmed|number}}</p>
-      <p class="card-text content">New Confirmed</p>
+      <p class="card-text content">Active Cases</p>
+        <p>{{globalStatus.ActiveCases.currently_infected_patients|number}}
+          
+        </p>
+         <p class="card-text content-sub">Currently infected patients</p>
+   <div class="row">
+  <div class="col">
+    <p style="color:violet">{{globalStatus.ActiveCases.inMidCondition|number}}
+          
+        </p>
+         <p class="card-text content-sub">in Mild Condition</p>
+  </div>
+  <div class="col"> <p style="color:red">{{globalStatus.ActiveCases.criticalStates|number}}
+          
+        </p>
+         <p class="card-text content-sub">in Critical Status</p></div>
+ 
+</div>
     </div>
   </div>
   <div class="card bg-light">
     <div class="card-body text-center">
-        <p>{{globalStatus.NewDeaths|number}}</p>
-      <p class="card-text content">New Deaths</p>
-    </div>
+       
+      <p class="card-text content">Closed Cases</p>
+      <p>{{globalStatus.ClosedCases.cases_which_had_an_outcome|number}}
+          
+        </p>
+         <p class="card-text content-sub">Cases which had outcome</p>
+   <div class="row">
+  <div class="col">
+    <p style="color:green">{{globalStatus.ClosedCases.recovered|number}}
+          
+        </p>
+         <p class="card-text content-sub">Recovered</p>
   </div>
-  <div class="card bg-light">
-    <div class="card-body text-center">
-        <p>{{globalStatus.NewRecovered|number}}</p>
-      <p class="card-text content">New Recovered</p>
+  <div class="col"> <p >{{globalStatus.ClosedCases.deaths|number}}
+          
+        </p>
+         <p class="card-text content-sub">Deaths</p></div>
+ 
     </div>
   </div>
 </div>

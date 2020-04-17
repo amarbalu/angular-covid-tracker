@@ -22,7 +22,7 @@ global:status
   ngOnInit() {
  
     this.service.obs$.subscribe(value=>{
-      const filtered=value.Countries.filter(value=>value.TotalConfirmed>0);
+      const filtered=value.CountriesToday;
       console.log((filtered.length/25))
       this.pagearr=[...new Array(Math.floor(filtered.length/25)).fill(0)];
       this.displayArr=filtered;
