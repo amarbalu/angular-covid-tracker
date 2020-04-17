@@ -1,8 +1,8 @@
-<div style="margin:20px">
+<div style="margin:5px">
   <button type="button" [ngClass]="activeDay!=='Today'?'btn':'btn btn-primary'" (click)="dayChange('Today')">Today</button>
 <button type="button" [ngClass]="activeDay==='Today'?'btn':'btn btn-primary'" (click)="dayChange('Yesterday')">Yesterday</button>
   </div>
-<div style="margin:20px"> <ul class="pagination" >
+<div style="margin:5px"> <ul class="pagination" >
  <li  [ngClass]="'page-item'" >
    <a class="page-link"  (click)="previousPage()">Prev</a></li>
   <ng-container *ngFor="let page of pagearr;index as id">
