@@ -14,7 +14,7 @@ countryStatusArr:object[];
 displayArr:object[];
 activepage:number;
 pagearr:number[];
-global:status
+activeDay:string;
   constructor(private service:CovidServiceService) {
     
    }
@@ -22,7 +22,7 @@ global:status
   ngOnInit() {
  
     this.service.obs$.subscribe(value=>{
-      const filtered=value.CountriesToday;
+      const filtered=value.Countries.Today;
       console.log((filtered.length/25))
       this.pagearr=[...new Array(Math.floor(filtered.length/25)).fill(0)];
       this.displayArr=filtered;

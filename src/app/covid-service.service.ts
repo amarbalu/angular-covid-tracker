@@ -24,7 +24,8 @@ getLatestStatus(){
     }
     const CountriesToday=value.reports[0].table[0];
     const CountriesYester=value.reports[0].table[1];
-    const responseData={Global,CountriesToday,CountriesYester}
+    const Countries={Today:CountriesToday,YesterDay:CountriesYester}
+    const responseData={Global,Countries}
     this.subs$.next(responseData)
   });
 }

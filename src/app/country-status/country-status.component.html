@@ -1,6 +1,6 @@
  <ul class="pagination" >
  <li  [ngClass]="'page-item'" >
-   <a class="page-link"  (click)="previousPage()">Previous</a></li>
+   <a class="page-link"  (click)="previousPage()">Prev</a></li>
   <ng-container *ngFor="let page of pagearr;index as id">
   <li  [ngClass]="activepage===id+1?'page-item active':'page-item'"><a class="page-link" (click)="pagechange(id+1)" >{{id+1}}</a></li>
 
