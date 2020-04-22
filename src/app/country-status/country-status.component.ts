@@ -16,16 +16,18 @@ activepage:number;
 pagearr:number[];
 activeDay:string;
 countriesArr:object;
+isLoading:boolean
   constructor(private service:CovidServiceService) {
     
    }
 
   ngOnInit() {
- 
+ this.isLoading=true
     this.service.obs$.subscribe(value=>{
       this.activeDay="Today";
       const filtered=value.Countries.Today;
       this.countriesArr=value.Countries;
+       this.isLoading=false;
       this.paginationCalculation(filtered);
       
        

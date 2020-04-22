@@ -1,3 +1,4 @@
+<div *ngIf="!isLoading">
 <div style="margin:5px">
   <button type="button" [ngClass]="activeDay!=='Today'?'btn':'btn btn-primary'" (click)="dayChange('Today')">Today</button>
 <button type="button" [ngClass]="activeDay==='Today'?'btn':'btn btn-primary'" (click)="dayChange('Yesterday')">Yesterday</button>
@@ -42,3 +43,4 @@
     
     </tbody>
   </table>
+</div>

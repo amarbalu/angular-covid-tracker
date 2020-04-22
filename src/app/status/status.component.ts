@@ -9,14 +9,17 @@ import { status } from './status.model';
 })
 export class StatusComponent implements OnInit {
 globalStatus:status
+isLoading:boolean
   constructor(private service:CovidServiceService) { }
 
   ngOnInit() {
+    this.isLoading=true
     this.service.getLatestStatus();
 
     this.service.obs$.subscribe(value=>{
       if(value && value.Global){
       this.globalStatus=value.Global;
+      this.isLoading=false
       }
     }
     )
