@@ -25,7 +25,7 @@ isLoading:boolean
  this.isLoading=true
     this.service.obs$.subscribe(value=>{
       this.activeDay="Today";
-      const filtered=value.Countries.Today;
+      const filtered=value.Countries.Today.sort((a,b)=>parseInt(b.TotalCases.split(",").join(""))-parseInt(a.TotalCases.split(",").join(""))).filter(check => check.Country !== "Total:");
       this.countriesArr=value.Countries;
        this.isLoading=false;
       this.paginationCalculation(filtered);
@@ -39,11 +39,11 @@ isLoading:boolean
     let filtered;
        this.activeDay=day;
     if(day==="Today"){
- filtered=this.countriesArr.Today;
+ filtered=this.countriesArr.Today.sort((a,b)=>parseInt(b.TotalCases.split(",").join(""))-parseInt(a.TotalCases.split(",").join(""))).filter(check => check.Country !== "Total:");
  this.paginationCalculation(filtered);
 
     }else{
- filtered=this.countriesArr.YesterDay;
+ filtered=this.countriesArr.YesterDay.sort((a,b)=>parseInt(b.TotalCases.split(",").join(""))-parseInt(a.TotalCases.split(",").join(""))).filter(check => check.Country !== "Total:");
  this.paginationCalculation(filtered);
     }
      

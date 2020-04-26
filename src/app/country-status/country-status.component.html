@@ -20,6 +20,7 @@
     <thead class="thead-light">
       <tr >
         <th class="th-sm">Country</th>
+        <th class="th-sm">Total Cases</th>
         <th class="th-sm">Active Cases</th>
         <th class="th-sm">New Cases</th>
           <th class="th-sm">Total Deaths</th>
@@ -32,6 +33,7 @@
      
       <tr *ngFor="let body of countryStatusArr  ">
         <td >{{body.Country }}</td>
+         <td>{{body.TotalCases  }}</td>
         <td>{{body.ActiveCases  }}</td>
         <td [ngStyle]="{'background-color':body.NewCases?'yellow':''}" >
           {{body.NewCases }}</td>
