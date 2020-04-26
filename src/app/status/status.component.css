@@ -8,6 +8,14 @@
 .header{
   border:0.5px solid black
 }
+img{
+  width:100vh;
+  height:calc(100vh - 120px);
+}
+.imgwidth{
+display:flex;
+justify-content: center
+}
 @media only screen and  (min-width: 576px){
 .card-columns-two{
   column-count:2 !important;
