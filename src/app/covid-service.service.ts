@@ -14,7 +14,7 @@ obs$:Observable<object>;
     this.obs$=this.subs$.asObservable();
   }
 getLatestStatus(){
-  this.http.get<{reports:status[]}>('https://covid19-server.chrismichael.now.sh/api/v1/AllReports').subscribe(value=>{
+  this.http.get<{reports:status[]}>('https://covid19-api.org/api/status').subscribe(value=>{
     const Global={
       TotalConfirmed:value.reports[0].cases,
       TotalDeaths:value.reports[0].deaths,
